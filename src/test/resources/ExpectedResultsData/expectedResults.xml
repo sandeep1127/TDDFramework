@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+<String name = "err_invalid_username_or_password"> Username and password do not match any user in this service.</String>        <!--This is Key value pair. Key you can give any name and Value should be the EXPECTED STATIC text while running a test case-->
+<String name = "product_title">PRODUCTS</String>
+
+
+</resources>

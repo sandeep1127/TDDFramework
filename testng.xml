@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+<listeners>                 <!--We're using this LISTNER here at suite level so that every class can make use of this listner. Details of this Listener are given in TestListner class. We always need to provide Listner here to let TestNG use it-->
+<listener class-name="com.qa.listeners.TestListener"/>    <!--giving the name of PACKAGE+Listener class-->
+ 
+ </listeners>
+  <test name="Test">
+  <parameter name= "emulator" value ="false"/>          <!-- if you wanted to work on Android Emulator, set it to true and update 'devicename' value-->
+  <parameter name= "platformName" value ="Android"/>   <!-- Added some capabilities here and others are in Config File-->
+  <parameter name= "platformVersion" value ="10.0"/>   <!-- This will be used when you use emulator . If Platform version is same for Emulator and for real device, then it causues issue, so appium will use UDID if its real, otherwise PLATFORMVERSION if its  emulator -->
+  <parameter name= "deviceName" value ="Nokia5.4"/>
+  <parameter name= "udid" value ="PD21BDD464038424"/> <!-- This can be used when you use REAL device-->
+    <classes>
+      <class name="com.qa.testClasses.LoginTests"/>            <!--Adding the Test classes which needs to be run.-->
+       <!--<methods>
+       <include name= "invalidUserName"/>
+       </methods>
+        </class> -->
+         </classes>                                                   <!-- If you want to run only specific test cases of specific class then use the Tag 'methods' under tag 'class' and remove '/' in class tag from the end of testclass name. under 'methods' cus tag 'include' and  use  name= "[testcasenameYouWnattoRun]/" and then close methods tag and class tag  -->            
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
